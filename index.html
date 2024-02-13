@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="result"></div>
+<script>
+    fetch('http://127.0.0.1:5000/api/data')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('result').innerHTML = data.data;
+        document.getElementById('result').style.backgroundColor = data.color;
+    })
+    .catch(error => console.error('Error: ', error));
+</script>
+</body>
+</html>
